@@ -1,0 +1,432 @@
+<?php
+session_start();
+if (isset($_SESSION["username"])) {
+ //   $username = $_SESSION["username"];
+ //   session_write_close();
+    
+    echo "<a href='logout.php'><input type=button value=logout name=logout></a>";
+} 
+else {
+
+    session_unset();
+    session_write_close();
+    $url = "./index.php";
+    header("Location: $url");
+}
+
+?>
+ <!DOCTYPE html>
+<html>
+<head>
+
+	<title>rolex</title>
+  <link rel="stylesheet" type="text/css" href="css/bs.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="fontawesome-free-5.12.0-web/css/all.css">
+
+	 
+</head>
+<body >
+  <!--Navbar-->
+  <div class="smooth">
+  <div class="header">
+		<nav id="ooo" class="navbar navbar-expand-lg navbar-dark  fixed-top">
+  <img src="IMAGES/10.png" style="width: 300px;">
+  <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span id="o" class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto ">
+      <li style="color: gold;" class="nav-item active">
+        <a id="yoyo" style="color: #fff; " class="nav-link" href="#Home" >Home <span class="sr-only">(current)</span></a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="#sale">Sale</a>
+      </li>      
+             <li class="nav-item">
+        <a class="nav-link" href="#new">New</a>
+      </li>
+     
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Products
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#products"><b>Latest</b></a>
+          <a class="dropdown-item" href="#ladies"><i>Ladies</i></a>
+         
+          <a class="dropdown-item" href="#men">Gents</a>
+          <a class="dropdown-item" href="#girls">Kids</a>
+          <a class="dropdown-item" href="#smart">Smart Watches</a>
+          
+        </div>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#Contact Us">Contact Us</a>
+        
+      </li>
+      <a href="logout.php">logout</a>
+      <a style="color:white; font-weight:bold; padding-left: 140px; margin-top: 10px; ">Welcome <?php echo $username;?></a>
+      
+    </ul>
+   
+  </div>
+
+</nav>
+
+	<!--Carusel-->
+	<br><br>
+	<section id="Home">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="IMAGES/w.jpg" class="d-block w-100" alt="...">
+         <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-3">ROLEX WATCHES</h1>
+          <h3 class="display-5">All you love it !!</h3>
+          <a href="#" class="btn btn-outline-light btn-lg">View Demo</a>
+          <a href="#" class="btn btn-primary btn-lg">Watch More</a>
+  
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="IMAGES/w3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-3">ROLEX WATCHES</h1>
+          <h3 class="display-5">All you love it !!</h3>
+          <a href="#" class="btn btn-outline-light btn-lg">View Demo</a>
+          <a href="#" class="btn btn-primary btn-lg">Watch More</a>
+         
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="IMAGES/w2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-3">ROLEX WATCHES</h1>
+          <h3 class="display-5">All you love it !!</h3>
+          <a href="#" class="btn btn-outline-light btn-lg">View Demo</a>
+          <a href="#" class="btn btn-primary btn-lg">Watch More</a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div></section>
+  <div class="container-fluid padding">
+<div class="row">
+	<div class="col-md-12">
+    <!--sale-->
+    <section id="sale">	
+      	<div style="width: 100%; margin-top:30px; " class="jumbotron">
+  <h1 class="display-4">ROLEX WATCHES DISCOUNTED !! OFFERS..</h1>
+  <p class="lead">Some of our branded watches are in season <b>sale and discounts</b> nowadays which u can buy in the reasonable prices .</p>
+  <hr class="my-4">
+  <p>CHECOUT NOW THOSE ALL WATCHES BY ONLY ONE CLICK ON <b>"WATCH NOW"</b> BUTTON .</p>
+  <a class="btn btn btn-lg" style="background-color: #944d8b; color: white;" href="#" role="button">WATCH NOW</a>
+</div>
+
+	</div>
+</div></section>
+<section id="new">
+<div class="row margin">
+	<div class="col-md-12">
+		<h1 style="font-size: 50px; width: 100%; background-color: #944d8b;" class="btn btn">ROLEX R-100:</h1>
+<br><br>
+
+<div class="animated infinite bounce" style="background-color: rgba(1,11,22,.4);text-align: center;letter-spacing: 3px;font-size: 20px;">NEW</div>
+	<div class="row justify-content-right">
+		<div class="col-md-1"></div>
+		<div id="" class="col-md-4"><img src="IMAGES/rl4.png" style="height: 150px; width: 150px;border: 1px solid black; border-radius: 75px;"><h1>ROLEX R-100 :</h1>	<blockquote class="blockquote">
+<p>This is our new ROLEX R-100 . This Watch is made with 100% pure and refined silver. This watch is also available in gold platted you can get it from our franchise.</p></blockquote><p> The most beutiful information about this watch is that it is 100 meters water resistant under the water.It would be a best option for the swimmers and divers . It is very friendly to them .</p>
+<footer class="blockquote-footer">From The Watch Designer!</footer></div>
+		<div class="row justify-content-center">
+<div class="col-md-6">
+	<div class="card" style="width: 600px;">
+  <img src="IMAGES/w4.jpg" class="card-img-top" style="width: 600px;" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">ROLEX R-100</h5>
+    <p class="card-text">So here is our new Role R-100 ,Go shop it now .You are definitely gonna love it.</p><footer class="blockquote-footer">From CEO ROLEX !</footer><br>
+    <a href="#" class="btn btn" style="background-color: #944d8b; color: white;">Shop It Now!</a>
+  </div>
+</div>
+</div>
+</div>
+
+		
+</div>
+</div>
+</div>
+</section>
+<br>
+<br>
+<section id="products">
+<div class="row justify-content-center">
+	<div class="col-md-12">
+		<h1 style="font-size: 50px; width: 100%; background-color: #944d8b;" class="btn btn">OUR LATEST PRODUCTS !!</h1>
+	</div>
+</div>
+<br><br>
+<div class="row" style="margin-left:75px; ">
+<div class="col-md-4">
+	<div class="card" style="width: 18rem;">
+  <img src="IMAGES/w2.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">ROLEX R-202</h5>
+    <p class="card-text">Made with the pure leather 100% jet green strips ,50 meters water resistance under the water </p>
+    <a href="#" class="btn btn" style="background-color: #944d8b; color: white;">USD:220$</a>
+  </div>
+</div>
+</div>
+
+<div class="col-md-4">
+	<div class="card" style="width: 18rem; " >
+  <img src="IMAGES/w4.jpg" height="180px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Rolex R-100</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn" style="background-color: #944d8b; color: white;">USD:180$</a>
+  </div>
+</div>
+</div>
+
+<div class="col-md-4">
+	<div class="card" style="width: 18rem;">
+  <img src="IMAGES/w3.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Locket Watch</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn" style="background-color: #944d8b; color: white;">USD:165$S</a>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<br><br>
+<hr class="my-4">
+<figure>
+  <div class="fixed-wrap">
+    <div id="fixed">
+    </div>
+  </div>
+</figure>
+<!--<div class="row justify-content-center">
+  <div class="col-md-3"></div>
+  <div class="col-md-7">-->
+<a class="btn btn" class="fun" data-toggle="collapse" data-target="#emoji" style="width: 100%;color:white;height: 50px;line-height: 30px; text-align: center;background-color:#944d8b; "> click to see latest products</a>
+ 
+</div>
+<br><br>
+  <div id="emoji" class="collapse">
+		<div class="container-fluid padding">
+      <div class="row text-center">
+        <div class=" col-md-3">
+  <img class="gif" src="IMAGES/men1.gif" height="300px" width="300px">
+
+  <a class="btn btn"  style="background-color: #944d8b;color:white;"href="#men">GENTS WATCHES </a>
+  </div>
+  <div class=" col-md-3">
+    <img class="gif" src="IMAGES/gw.gif" height="300px" width="300px">
+    <a class="btn btn" style="background-color: #944d8b;color:white;" href="#girls">KIDS WATCHES </a>
+    </div>
+      <div class=" col-md-3">
+        <img class="gif" src="IMAGES/panda.gif">
+        <a class="btn btn" style="background-color: #944d8b;color:white;" href="#ladies">LADIES WATCHES </a>
+        </div>
+
+        <div class=" col-md-3">
+          <img class="gif" src="IMAGES/sw.gif" height="300px" width="300px">
+          <a class="btn btn" style="background-color: #944d8b;color:white;" href="#smart">SMART WATCHES </a>
+          </div>
+       
+</div>
+
+</div></div>
+    <br><br><br>
+
+    <section id="ladies">
+      <div class="row container-fluid padding">
+        <div class="col-md-12">
+          <h1 style="font-size: 50px; width: 102%;  background-color: #582051; color: white;" class="btn btn">LADIES SECTION:</h1> </div></div>
+      <br><br>
+      
+	<div class="container">
+	
+			<div class="gallery">
+				
+<a href="IMAGES/img39.jpg" data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/g.jpg"> </a>
+<a href="IMAGES/contact.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px; border:2px solid white;" src="IMAGES/g5.jpg"> </a>
+<a href="IMAGES/boxx8.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/g6.jpg"> </a>
+<a href="IMAGES/this1.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/g8.jpg"></a>
+</div>
+</div>
+<p class="btn btn-success" style="float:right; margin-right: 120px; background-color: #582051; color: white;">SHOP NOW </p>
+</div>
+
+</section>
+     <br><br><br><br><br><br>
+     
+    <section id="men">
+      <div class="row container-fluid padding">
+        <div class="col-md-12">
+          <h1 style="font-size: 50px; width: 102%; background-color: #582051; color: white;" class="btn btn">GENTS SECTION:</h1> </div></div>
+      <br><br>
+      
+	<div class="container">
+	
+			<div class="gallery">
+				
+<a href="IMAGES/img39.jpg" data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/w2.jpg"> </a>
+<a href="IMAGES/contact.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/m.jpeg"> </a>
+<a href="IMAGES/boxx8.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px; border:2px solid white;" src="IMAGES/w4.jpg"> </a>
+<a href="IMAGES/this1.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px; border:2px solid white;" src="IMAGES/w1.jpg"></a>
+</div>
+</div>
+<p class="btn btn-success" style="float:right; margin-right: 120px; background-color: #582051; color: white;">SHOP NOW </p>
+</div>
+
+</section>
+     <br><br><br><br><br><br>
+
+     <section id="girls">
+      <div class="row container-fluid padding">
+        <div class="col-md-12">
+          <h1 style="font-size: 50px; width: 102%; background-color: #582051; color: white;" class="btn btn">KIDS SECTION:</h1> </div></div>
+      <br><br>
+      
+	<div class="container">
+	
+			<div class="gallery">
+				
+<a href="IMAGES/img39.jpg" data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/k.jpg"> </a>
+<a href="IMAGES/contact.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px; border:2px solid white;" src="IMAGES/k4.jpg"> </a>
+<a href="IMAGES/boxx8.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/k1.jpg"> </a>
+<a href="IMAGES/this1.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/k3.jpg"></a>
+</div>
+</div>
+<p class="btn btn" style="float:right; margin-right: 120px; background-color: #582051; color: white;">SHOP NOW </p>
+</div>
+
+</section>
+     <br><br><br><br><br><br>
+     <section id="smart">
+      <div class="row container-fluid padding">
+        <div class="col-md-12">
+          <h1 style="font-size: 50px; width: 102%;  background-color: #582051; color: white;" class="btn btn">SMART WATCHES:</h1> </div></div>
+      <br><br>
+      
+	<div class="container">
+	
+			<div class="gallery">
+				
+<a href="IMAGES/img39.jpg" data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/s1.jpg"> </a>
+<a href="IMAGES/contact.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px; border:2px solid white;" src="IMAGES/s1.png"> </a>
+<a href="IMAGES/boxx8.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/s2.jpg"> </a>
+<a href="IMAGES/this1.jpg"data-lightbox="mygallery"><img style="height: 300px;width: 600px;border:2px solid white; " src="IMAGES/s2.png"></a>
+</div>
+</div>
+<p class="btn btn-success" style="float:right; margin-right: 120px; background-color: #582051; color: white;">SHOP NOW </p>
+</div>
+
+</section>
+     <br><br><br><br><br><br>
+<figure>
+  <div class="fixed-wrap">
+    <div id="fixed"></div>
+  </div>
+</figure>
+    
+ 
+</div>
+</div>
+<div class="container-fluid padding">
+  <div class="row text-center padding">
+    <div class="col-12">
+      <hr class="light">
+<h2>Connect</h2>
+<hr class="light"></div>
+
+<div class="col-12 social padding">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-google-plus-g"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+
+  </div>
+</div>
+
+<!--footer-->
+<section id="Contact Us">
+<footer style="background-color:  #490750; color:#fff;">
+  <div class="container-fluid padding margin">
+    <div class="row text-center">
+<div class="col-md-4">
+  <img src="IMAGES/10.png" width="300px" style="text-align: center; margin-left: 80px;margin-top: 33px;">
+  <hr class="light" color="white">
+  <p>555-555-555</p>
+  <p>email@rolexwatches.com</p>
+  <p>100, street name</p>
+  <p>City, State 46000</p>
+</div>
+<div class="col-md-4">
+  <hr class="light" color="white" >
+<h4>Our Hours</h4>
+  <hr class="light" color="white">
+  <p>Monday-Thursday:10am - 11pm</p>
+  <p>Friday: closed</p>
+  <p>Saturday:11am - 2am</p>
+  <p>Sunday:12pm - 1am </p>
+</div>
+<div class="col-md-4">
+  <hr class="light" color="white" >
+<h4>Service Areas</h4>
+  <hr class="light" color="white">
+  <p>City, State 00000</p>
+  <p>City, State 00000</p>
+  <p>City, State 00000</p>
+  <p>City, State 00000</p>
+  <p>City, State 00000</p>
+  
+</div>
+<div class="col-md-4">
+  <a href=bsa.html ><button class="btn btn" style="color:black; background-color:rgb(201, 106, 185);border:1px solid black;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" >Send us message</button> </a>
+</div>
+<div class="col-12">
+  <hr class="light" color="white">
+  <h5>&copy;rolexwatches.com</h5>
+</div>
+
+    </div>
+  </div>
+</footer></section>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+
+<script type="text/javascript"src="js/lightbox-plus-jquery.min.js"></script>
+
+</body>
+</html>
